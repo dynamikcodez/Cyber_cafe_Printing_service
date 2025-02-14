@@ -62,4 +62,4 @@ Contributions are welcome! Feel free to submit issues or pull requests to improv
 
 📩 Contact
 
-For any inquiries or support, reach out via your-iyiola466@gmail.com or open an issue 
+For any inquiries or support, reach out via iyiola466@gmail.com or open an issue 
