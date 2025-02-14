@@ -41,7 +41,7 @@ cyber-cafe-printing/
 │── app.py               # Main Flask application
 │── README.md            # Project documentation
 
-🎨 Screenshots
+
 
 📌 Add screenshots of the UI here for better understanding
 
