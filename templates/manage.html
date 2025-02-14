@@ -1,0 +1,159 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Manage Uploads</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Manage Uploaded Files</h1>-->
+
+<!--    <ul>-->
+<!--        {% for file in files %}-->
+<!--        <li>-->
+<!--            <a href="{{ url_for('uploaded_file', filename=file) }}" target="_blank">{{ file }}</a>-->
+<!--            <form action="/manage" method="post" style="display:inline;">-->
+<!--                <input type="hidden" name="filename" value="{{ file }}">-->
+<!--                <button type="submit" name="action" value="delete">Delete</button>-->
+<!--            </form>-->
+<!--            <button onclick="printFile('{{ url_for('uploaded_file', filename=file) }}')">Print</button>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--    <br>-->
+<!--    <a href="{{ url_for('index') }}">Go Back</a>-->
+
+<!--    <script>-->
+<!--        function printFile(fileUrl) {-->
+<!--            let printWindow = window.open(fileUrl, '_blank');-->
+<!--            printWindow.onload = function () {-->
+<!--                printWindow.print();-->
+<!--            };-->
+<!--        }-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Uploads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e9ecef;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        button.print {
+            background: #28a745;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Manage Uploaded Files</h1>
+
+        <ul>
+            {% for file in files %}
+            <li>
+                <a href="{{ url_for('uploaded_file', filename=file) }}" target="_blank">{{ file }}</a>
+                <div>
+                    <form action="/manage" method="post" style="display:inline;">
+                        <input type="hidden" name="filename" value="{{ file }}">
+                        <button type="submit" name="action" value="delete">Delete</button>
+                    </form>
+                    <button class="print" onclick="printFile('{{ url_for('uploaded_file', filename=file) }}')">Print</button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('index') }}" class="back-link">Go Back</a>
+    </div>
+
+    <script>
+        function printFile(fileUrl) {
+            let printWindow = window.open(fileUrl, '_blank');
+            printWindow.onload = function () {
+                printWindow.print();
+            };
+        }
+    </script>
+
+</body>
+</html>

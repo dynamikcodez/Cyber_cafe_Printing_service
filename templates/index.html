@@ -1,0 +1,114 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Printing</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Printing cost</h1>-->
+<!--    <p>Printing &#45;&#45;#200(Black and white)</p>-->
+<!--    <p>Printing &#45;&#45;#500(Colored)</p>-->
+
+<!--<h1>Upload a File to print</h1>-->
+<!--    <form action="/" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="files" multiple>  &lt;!&ndash; Allow multiple files &ndash;&gt;-->
+<!--        <button type="submit">Upload</button>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .pricing {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Printing Cost</h1>
+        <div class="pricing">
+            <p><strong>Black & White:</strong> #200</p>
+            <p><strong>Colored:</strong> #500</p>
+        </div>
+
+        <h1>Upload a File to Print</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="files" multiple>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+</body>
+</html>
